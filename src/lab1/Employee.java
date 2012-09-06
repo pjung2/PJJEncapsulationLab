@@ -15,10 +15,10 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String ssn;
-    boolean metWithHr;
-    boolean metDeptStaff;
-    boolean reviewedDeptPolicies;
-    boolean movedIn;
+    private boolean metWithHr;
+    private boolean metDeptStaff;
+    private boolean reviewedDeptPolicies;
+    private boolean movedIn;
     private String cubeId;
 
     public String getSsn() {
