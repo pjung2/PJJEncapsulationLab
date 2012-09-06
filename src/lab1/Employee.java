@@ -1,6 +1,7 @@
 package lab1;
 
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  * In this lab your challenge is to fix the code in both classes to use
@@ -11,16 +12,52 @@ import java.util.Date;
  * @version     1.01
  */
 public class Employee {
-    String firstName;
-    String lastName;
-    public String ssn;
-    public Date birthDate;
+    private String firstName;
+    private String lastName;
+    private String ssn;
     boolean metWithHr;
     boolean metDeptStaff;
     boolean reviewedDeptPolicies;
     boolean movedIn;
-    String cubeId;
+    private String cubeId;
 
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        // Format specifier to validate ssn Value
+        // Valid formats are (***-****) (*******)
+        if(!(ssn.equals("^\\d{3}[-]?\\d{4}"))){
+            JOptionPane.showMessageDialog(null, "Sorry, that SSN is not a valid format.");
+        }
+        this.ssn = ssn;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        // Format specifier to validate firstName value
+        if(firstName == null || firstName.length() == 0){
+            JOptionPane.showMessageDialog(null, "Sorry, that is not a valid first name.");
+        }
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        // Format specifier to validate lastName value
+        if(lastName == null || lastName.length() == 0){
+            JOptionPane.showMessageDialog(null, "Sorry, that is not a valid last name.");
+        }
+        this.lastName = lastName;
+    }
+    
     public Employee() {
 
     }
